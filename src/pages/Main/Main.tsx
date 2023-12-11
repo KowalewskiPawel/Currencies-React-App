@@ -1,13 +1,10 @@
-import { useEffect } from "react";
-import { useAppDispatch } from "../../app/store";
-import { fetchRates } from "../../features/currency";
+import { RatesTable, RefreshButton } from "../../components";
+import "../../styles/global.scss";
 
-export const Main = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchRates());
-  }, [dispatch]);
-
-  return <div>Hello World</div>;
-};
+export const Main = () => (
+  <div className="mainContainer">
+    <h1>Exchange Rate</h1>
+    <RefreshButton />
+    <RatesTable />
+  </div>
+);

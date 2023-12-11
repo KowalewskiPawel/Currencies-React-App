@@ -1,0 +1,58 @@
+// RatesTable.module.scss
+
+.loadingMessage,
+.errorMessage {
+  color: #e0e0e0; // Light color for dark mode
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.errorMessage {
+  color: #ff6b6b; // Error color for dark mode
+}
+
+.ratesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #e0e0e0; // Light text color for dark mode
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #333; // Darker border for dark mode
+  }
+
+  th {
+    background-color: #222; // Dark background for headers
+  }
+
+  tr:hover {
+    background-color: #333; // Slightly lighter background on hover
+  }
+
+  @media (max-width: 600px) {
+    tr {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    th, td {
+      display: block;
+      text-align: right;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      color: #e0e0e0; // Light text color for dark mode
+    }
+  }
+}
+
