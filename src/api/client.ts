@@ -1,4 +1,4 @@
-const BASE_URL = "";
+const BASE_URL = "https://api.coinbase.com/v2";
 
 type Config = {
   method: string;
