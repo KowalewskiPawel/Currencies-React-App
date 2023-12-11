@@ -12,13 +12,22 @@ export const RatesTable = () => {
     dispatch(fetchRates());
   }, [dispatch, currency]);
 
-  if (loading) {
-    return <div className={styles.loadingMessage}>Loading...</div>;
-  }
+  const renderTableContent = () => {
+    if (loading) {
+      return <tr><td colSpan={2}>Loading...</td></tr>;
+    }
 
-  if (error) {
-    return <div className={styles.errorMessage}>Error: {error}</div>;
-  }
+    if (error) {
+      return <tr><td colSpan={2}>Error: {error}</td></tr>;
+    }
+
+    return Object.entries(rates).map(([key, value]) => (
+      <tr key={key}>
+        <td>{key}</td>
+        <td>{value}</td>
+      </tr>
+    ));
+  };
 
   return (
     <table className={styles.ratesTable}>
@@ -29,12 +38,7 @@ export const RatesTable = () => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(rates).map(([key, value]) => (
-          <tr key={key}>
-            <td>{key}</td>
-            <td>{value}</td>
-          </tr>
-        ))}
+        {renderTableContent()}
       </tbody>
     </table>
   );
