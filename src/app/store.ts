@@ -1,6 +1,6 @@
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { currencySlice } from '../features/currencies';
+import { currencySlice } from '../features/currency';
 
 export const storeOptions = {
   reducer: {
