@@ -14,11 +14,11 @@ export const RatesTable = () => {
 
   const renderTableContent = () => {
     if (loading) {
-      return <tr><td colSpan={2}>Loading...</td></tr>;
+      return <tr className={styles.loadingMessage}><td colSpan={2}>Loading...</td></tr>;
     }
 
     if (error) {
-      return <tr><td colSpan={2}>Error: {error}</td></tr>;
+      return <tr className={styles.errorMessage}><td colSpan={2}>Error: {error}</td></tr>;
     }
 
     return Object.entries(rates).map(([key, value]) => (
