@@ -13,11 +13,11 @@ export const RatesTable = () => {
   }, [dispatch, currency]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className={styles.loadingMessage}>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className={styles.errorMessage}>Error: {error}</div>;
   }
 
   return (
