@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../app/store";
 import { fetchRates, selectCurrencyState } from "../../features/currency";
+import styles from './RefreshButton.module.scss';
 
 export const RefreshButton = () => {
   const dispatch = useAppDispatch();
@@ -10,7 +11,7 @@ export const RefreshButton = () => {
   };
 
   return (
-    <div>
+    <div className={styles.refreshButtonContainer}>
       <button onClick={refetchExchangeRates} disabled={loading}>
         Refresh
       </button>
