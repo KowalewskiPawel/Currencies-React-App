@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/store";
 import { fetchRates, selectCurrencyState } from "../../features/currency";
+import styles from "./RatesTable.module.scss";
 
 export const RatesTable = () => {
   const dispatch = useAppDispatch();
@@ -20,7 +21,7 @@ export const RatesTable = () => {
   }
 
   return (
-    <table>
+    <table className={styles.ratesTable}>
       <thead>
         <tr>
           <th>Currency</th>
