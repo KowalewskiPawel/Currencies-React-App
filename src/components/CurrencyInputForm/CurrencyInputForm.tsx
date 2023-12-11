@@ -1,14 +1,16 @@
 import { useFormik } from "formik";
-import { useAppDispatch } from "../../app/store";
+import { useAppDispatch, useAppSelector } from "../../app/store";
 import { setCurrency } from "../../features/currency/slice";
 import styles from "./CurrencyInputForm.module.scss";
+import { selectCurrencyState } from "../../features/currency";
 
 export const CurrencyInputForm = () => {
   const dispatch = useAppDispatch();
+  const { currency } = useAppSelector(selectCurrencyState);
 
   const formik = useFormik({
     initialValues: {
-      currency: "USD",
+      currency,
     },
     onSubmit: (values) => {
       dispatch(setCurrency(values.currency));
