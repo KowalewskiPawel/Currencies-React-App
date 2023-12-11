@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { CurrencyState } from "./state";
 
 const initialState = {
-  currency: "BTC",
+  currency: "USD",
   rates: {},
   loading: false,
   error: null,
